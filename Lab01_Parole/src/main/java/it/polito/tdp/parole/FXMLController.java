@@ -34,12 +34,22 @@ public class FXMLController {
 
     @FXML
     void doInsert(ActionEvent event) {
-    	// TODO
+    	//AGGIUNGO PAROLA
+//    	String p = txtParola.getText();
+    	this.elenco.addParola(txtParola.getText());
+//    	
+//    	txtResult.appendText("L'elenco delle parole è : "+elenco.getElenco() +"\n");
+    	String result = "";
+    	for(String p : elenco.getElenco()) {
+    		result += p + "\n";
+    	}
+    	txtResult.setText(result);
     }
 
     @FXML
     void doReset(ActionEvent event) {
-    	// TODO
+    	this.elenco.reset();
+    	txtResult.clear();
     }
 
     @FXML
